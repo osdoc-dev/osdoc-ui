@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "osdoc-ui": ["components/index.ts"],
+      "osdoc-ui/esm/*": ["components/*"],
+      "osdoc-ui/lib/*": ["components/*"]
+    },
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "lib",
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["components", "global.d.ts"],
+  "exclude": ["types", "node_modules", "lib", "esm"]
+}
