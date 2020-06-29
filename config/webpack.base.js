@@ -1,6 +1,11 @@
-/**
- * 基础webpack配置
+/*
+ * 基础配置
+ * @Author: ahwgs
+ * @Date: 2020-06-29 23:47:32
+ * @Last Modified by: ahwgs
+ * @Last Modified time: 2020-06-30 00:02:09
  */
+
 const { CACHE_DIR, SCRIPT_EXTS, STYLE_EXTS } = require('../build/constant');
 
 const CACHE_LOADER = {
@@ -8,16 +13,6 @@ const CACHE_LOADER = {
   options: {
     cacheDirectory: CACHE_DIR,
   },
-};
-
-const getFileLoader = (limit = 2000, prefix) => {
-  return {
-    loader: 'file-loader',
-    options: {
-      limit,
-      name: `${prefix}/[name].[ext]`,
-    },
-  };
 };
 
 const CSS_LOADERS = [
@@ -68,14 +63,14 @@ function getBaseConfig() {
           sideEffects: true,
           use: [...CSS_LOADERS, 'less-loader'],
         },
-        {
-          test: /\.html$/,
-          loader: 'html-withimg-loader',
-        },
-        {
-          test: /\.md$/,
-          use: [CACHE_LOADER, MARKDOWN_LOADER, 'babel-loader'],
-        },
+        // {
+        //   test: /\.html$/,
+        //   loader: 'html-withimg-loader',
+        // },
+        // {
+        //   test: /\.md$/,
+        //   use: [CACHE_LOADER, MARKDOWN_LOADER, 'babel-loader'],
+        // },
         {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
           loader: 'file-loader',
