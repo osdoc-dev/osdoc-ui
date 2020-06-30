@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "osdoc-ui": ["components/index.ts"],
-      "osdoc-ui/esm/*": ["components/*"],
-      "osdoc-ui/lib/*": ["components/*"]
+      "osdoc-ui": ["./components/index.ts"],
+      "osdoc-ui/esm/*": ["./components/*"],
+      "osdoc-ui/lib/*": ["./components/*"]
     },
     "target": "esnext",
     "module": "commonjs",
@@ -15,8 +15,9 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
-  },
-  "include": ["components", "global.d.ts"],
-  "exclude": ["types", "node_modules", "lib", "esm"]
+    "resolveJsonModule": true,
+    "allowJs": true
+  }
+  // "include": ["components", "global.d.ts"],
+  // "exclude": ["node_modules", "lib", "esm"]
 }

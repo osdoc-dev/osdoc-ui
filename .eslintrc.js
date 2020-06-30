@@ -4,5 +4,6 @@ module.exports = {
     'react/button-has-type': 0,
     '@typescript-eslint/no-var-requires': 0,
     'import/no-extraneous-dependencies': 0,
+    'import/extensions': 0,
   },
 };

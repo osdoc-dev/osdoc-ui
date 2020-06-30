@@ -10,8 +10,15 @@
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build:types": "tsc -p tsconfig.build.json && cpr lib esm"
   },
+  "sideEffects": [
+    "dist/*",
+    "esm/**/style/*",
+    "lib/**/style/*",
+    "*.less"
+  ],
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
@@ -22,15 +29,20 @@
     "@babel/preset-typescript": "^7.10.1",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
+    "@svgr/webpack": "^5.4.0",
     "@types/classnames": "^2.2.10",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
+    "@types/source-list-map": "^0.1.2",
     "address": "^1.1.2",
+    "autoprefixer": "^9.8.4",
     "babel-loader": "^8.1.0",
     "cache-loader": "^4.1.0",
     "commitizen": "^4.1.2",
+    "cpr": "^3.0.1",
     "css-loader": "^3.6.0",
     "cz-conventional-changelog": "^3.2.0",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "4.3.0",
     "html-withimg-loader": "^0.1.16",
     "husky": "^4.2.5",
@@ -40,6 +52,7 @@
     "ora": "^4.0.4",
     "osdoc-lint": "1.0.6",
     "portfinder": "^1.0.26",
+    "postcss": "^7.0.32",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
@@ -47,6 +60,7 @@
     "react-router-dom": "^5.2.0",
     "style-loader": "^1.2.1",
     "typescript": "^3.9.5",
+    "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"

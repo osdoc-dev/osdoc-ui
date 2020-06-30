@@ -3,11 +3,11 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:47:32
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-30 00:02:09
+ * @Last Modified time: 2020-07-01 01:25:00
  */
 
 const { CACHE_DIR, SCRIPT_EXTS, STYLE_EXTS } = require('../build/constant');
-
+const autoprefixer = require('autoprefixer');
 const CACHE_LOADER = {
   loader: 'cache-loader',
   options: {
@@ -80,19 +80,11 @@ function getBaseConfig() {
           },
         },
         {
-          test: /\.(png|jpe?g|gif|bpm|svg)(\?.*)?$/,
+          test: /\.(png|jpe?g|gif|bpm)(\?.*)?$/,
           loader: 'url-loader',
           options: {
             limit: 3000,
             name: 'img/[name].[ext]',
-          },
-        },
-        {
-          exclude: /\.js|\.css|\.scss|\.less|\.sass|\.html|\.json|\.ejs$/,
-          loader: 'url-loader',
-          options: {
-            limit: 2000,
-            name: 'ext/[name].[ext]',
           },
         },
       ],

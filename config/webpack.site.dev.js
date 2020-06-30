@@ -3,16 +3,14 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:47:43
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-29 23:58:35
+ * @Last Modified time: 2020-06-30 01:33:16
  */
 
 const getBaseConfig = require('./webpack.base');
 const merge = require('webpack-merge');
-const { join } = require('path');
+const { join, resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { WEBSITE_TITLE, WEBSITE_LOGO, WEBSITE_DESC } = require('../build/constant');
-
-console.log(join(__dirname, '../docs/desktop/main.js'));
 
 /**
  * 站点开发配置
@@ -20,8 +18,13 @@ console.log(join(__dirname, '../docs/desktop/main.js'));
 function getSiteDevConfig() {
   return merge(getBaseConfig(), {
     entry: {
-      'site-desktop': join(__dirname, '../docs/desktop/main.jsx'),
+      'site-desktop': join(__dirname, '../docs/desktop/main.js'),
       // 'site-mobile': `${siteRoot}/mobile/main.js`,
+    },
+    resolve: {
+      alias: {
+        'osdoc-ui': resolve(__dirname, '../components'),
+      },
     },
     devServer: {
       port: 8080,
