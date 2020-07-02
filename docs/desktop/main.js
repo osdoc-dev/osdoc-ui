@@ -7,6 +7,7 @@ import PageHeader from './components/header';
 import '../common/style/base.less';
 import DocPage from './pages/doc';
 import CompPage from './pages/comp';
+import PageFooter from './components/footer';
 
 class App extends React.Component {
   shouldComponentUpdate() {
@@ -22,6 +23,7 @@ class App extends React.Component {
           <Route path="/doc" exact component={DocPage} />
           <Route path="/comp" exact component={CompPage} />
         </Switch>
+        <PageFooter />
       </main>
     );
   }

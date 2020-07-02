@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.less';
+import { NavLink } from 'react-router-dom';
 import { DOC_BACKGROUND } from '../../common/constant';
 import WavesArea from '../components/waves-area';
 
@@ -34,6 +35,13 @@ class IndexPage extends React.PureComponent {
             backgroundImage: `url(${DOC_BACKGROUND})`,
           }}
         />
+        <div className="banner-container">
+          <h2 data-shadow="OSDOC UI">OSDOC UI</h2>
+          <h3>更简单、更方便的React移动端组件库</h3>
+          <div className="button">
+            <NavLink to="/doc">开始使用</NavLink>
+          </div>
+        </div>
         <WavesArea className="home-waves"></WavesArea>
       </section>
     );
@@ -41,7 +49,7 @@ class IndexPage extends React.PureComponent {
     return (
       <main className="warpper home-page">
         {bannerView}
-        <div style={{ height: '1000px' }}></div>
+        <div style={{ height: '500px' }}></div>
       </main>
     );
   }
