@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true
-  }
-  // "include": ["components", "global.d.ts"],
-  // "exclude": ["node_modules", "lib", "esm"]
+  },
+  "include": ["components", "global.d.ts"],
+  "exclude": ["node_modules", "lib", "esm"]
 }
