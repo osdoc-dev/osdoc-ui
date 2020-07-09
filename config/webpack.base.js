@@ -3,11 +3,13 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:47:32
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-07-01 01:25:00
+ * @Last Modified time: 2020-07-09 23:33:03
  */
 
 const { CACHE_DIR, SCRIPT_EXTS, STYLE_EXTS } = require('../build/constant');
 const autoprefixer = require('autoprefixer');
+const path = require('path');
+
 const CACHE_LOADER = {
   loader: 'cache-loader',
   options: {
@@ -38,8 +40,6 @@ const CSS_LOADERS = [
   },
 ];
 
-const MARKDOWN_LOADER = {};
-
 function getBaseConfig() {
   return {
     mode: 'development',
@@ -63,14 +63,10 @@ function getBaseConfig() {
           sideEffects: true,
           use: [...CSS_LOADERS, 'less-loader'],
         },
-        // {
-        //   test: /\.html$/,
-        //   loader: 'html-withimg-loader',
-        // },
-        // {
-        //   test: /\.md$/,
-        //   use: [CACHE_LOADER, MARKDOWN_LOADER, 'babel-loader'],
-        // },
+        {
+          test: /\.md$/,
+          loader: `babel-loader!${path.join(__dirname, '../build/addImportLoader.js')}`,
+        },
         {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
           loader: 'file-loader',

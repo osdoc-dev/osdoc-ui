@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:47:43
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-30 01:33:16
+ * @Last Modified time: 2020-07-09 23:36:41
  */
 
 const getBaseConfig = require('./webpack.base');
@@ -24,6 +24,7 @@ function getSiteDevConfig() {
     resolve: {
       alias: {
         'osdoc-ui': resolve(__dirname, '../components'),
+        markdown: resolve(__dirname, '../docs/desktop/markdown/'),
       },
     },
     devServer: {

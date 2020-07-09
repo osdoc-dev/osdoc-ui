@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 import './index.less';
+import classNames from 'classnames';
 import logoIcon from '../../assets/png/logo.png';
 
 class PageHeader extends React.PureComponent {
@@ -25,8 +26,16 @@ class PageHeader extends React.PureComponent {
 
   render() {
     const menuList = this.getMenuList();
+    const { location } = this.props;
+    const { pathname } = location;
+    const hasTopCls = pathname !== '/';
     return (
-      <header id="page-header" className="page-header">
+      <header
+        id="page-header"
+        className={classNames('page-header', {
+          'top-nav': hasTopCls,
+        })}
+      >
         <div className="page-header-nav">
           <div className="page-header-nav-left">
             <Link to="/">

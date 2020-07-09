@@ -7,7 +7,6 @@ import WavesArea from '../components/waves-area';
 class IndexPage extends React.PureComponent {
   componentDidMount() {
     const header = document.getElementById('page-header');
-    header.classList.remove('top-nav');
     window.addEventListener(
       'scroll',
       () => {
@@ -19,11 +18,6 @@ class IndexPage extends React.PureComponent {
       },
       100,
     );
-  }
-
-  componentWillUnmount() {
-    const header = document.getElementById('page-header');
-    header.classList.add('top-nav');
   }
 
   render() {
