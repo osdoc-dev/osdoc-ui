@@ -3,13 +3,13 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:47:32
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-07-09 23:33:03
+ * @Last Modified time: 2020-07-12 22:38:59
  */
 
-const { CACHE_DIR, SCRIPT_EXTS, STYLE_EXTS } = require('../build/constant');
+const { CACHE_DIR, SCRIPT_EXTS, STYLE_EXTS, PRIMARY_COLOR } = require('../build/constant');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
-
+const WebpackBar = require('webpackbar');
 const CACHE_LOADER = {
   loader: 'cache-loader',
   options: {
@@ -85,7 +85,12 @@ function getBaseConfig() {
         },
       ],
     },
-    plugins: [],
+    plugins: [
+      new WebpackBar({
+        name: 'OSDOC UI',
+        color: PRIMARY_COLOR,
+      }),
+    ],
   };
 }
 

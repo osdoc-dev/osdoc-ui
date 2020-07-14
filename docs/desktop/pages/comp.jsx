@@ -1,7 +1,8 @@
 import React from 'react';
-import config from '../config';
+import config from '../../common/constant/config';
 import SiderMenu from '../components/sider-menu';
 import RouteContent from '../components/route-content';
+import Simulator from '../components/simulator';
 
 class CompPage extends React.PureComponent {
   render() {
@@ -13,6 +14,7 @@ class CompPage extends React.PureComponent {
         <div className="sider-right">
           <RouteContent data={navConfig} pathName={pathName} redirect="button" />
         </div>
+        <Simulator />
       </section>
     );
   }

@@ -1,5 +1,12 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import Loadable from 'react-loadable';
+
+const LoadableComponent = component =>
+  Loadable({
+    loader: component.module,
+    loading: () => null,
+  });
 
 class RouteContent extends React.PureComponent {
   render() {
@@ -14,7 +21,7 @@ class RouteContent extends React.PureComponent {
                 <Route
                   key={item.value}
                   path={`/${pathName}/${item.value.toLowerCase()}`}
-                  component={require(`../../views/${item.value}`).default}
+                  component={LoadableComponent(item)}
                 />
               ));
             }
@@ -23,7 +30,7 @@ class RouteContent extends React.PureComponent {
               <Route
                 key={menu.value}
                 path={`/${pathName}/${menu.value.toLowerCase()}`}
-                component={require(`../../views/${menu.value}`).default}
+                component={LoadableComponent(menu)}
               />
             );
           })}

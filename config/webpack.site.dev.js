@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:47:43
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-07-09 23:36:41
+ * @Last Modified time: 2020-07-14 23:58:40
  */
 
 const getBaseConfig = require('./webpack.base');
@@ -19,12 +19,11 @@ function getSiteDevConfig() {
   return merge(getBaseConfig(), {
     entry: {
       'site-desktop': join(__dirname, '../docs/desktop/main.js'),
-      // 'site-mobile': `${siteRoot}/mobile/main.js`,
+      'site-mobile': join(__dirname, '../docs/mobile/main.js'),
     },
     resolve: {
       alias: {
         'osdoc-ui': resolve(__dirname, '../components'),
-        markdown: resolve(__dirname, '../docs/desktop/markdown/'),
       },
     },
     devServer: {
@@ -37,7 +36,9 @@ function getSiteDevConfig() {
       hot: true,
     },
     output: {
-      chunkFilename: '[name].js',
+      chunkFilename: '[name].chunk.js',
+      filename: 'js/[name].js',
+      publicPath: '/',
     },
     optimization: {
       splitChunks: {
@@ -59,6 +60,14 @@ function getSiteDevConfig() {
         chunks: ['chunks', 'site-desktop'],
         template: join(__dirname, '../docs/desktop/index.html'),
         filename: 'index.html',
+      }),
+      new HtmlWebpackPlugin({
+        title: WEBSITE_TITLE,
+        logo: WEBSITE_LOGO,
+        description: WEBSITE_DESC,
+        chunks: ['chunks', 'site-mobile'],
+        template: join(__dirname, '../docs/mobile/index.html'),
+        filename: 'mobile.html',
       }),
     ],
   });

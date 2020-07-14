@@ -1,6 +1,6 @@
 import React from 'react';
 import SiderMenu from '../components/sider-menu';
-import config from '../config';
+import config from '../../common/constant/config';
 import RouteContent from '../components/route-content';
 
 class DocPage extends React.PureComponent {
