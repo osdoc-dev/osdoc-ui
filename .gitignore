@@ -18,6 +18,7 @@
 /.docz
 /doc-site
 /types
+/docsAssets
 
 # misc
 .DS_Store

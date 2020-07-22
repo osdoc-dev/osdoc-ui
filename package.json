@@ -7,13 +7,15 @@
   "module": "esm/index.js",
   "repository": "git@github.com:osdoc-dev/osdoc-ui.git",
   "author": "ahwgs <ah_wgs@126.com>",
+  "homepage": "https://ui.osdoc.cn/#/",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev",
     "commit": "git-cz",
     "build:types": "tsc -p tsconfig.build.json && cpr lib esm",
     "clean": "rimraf lib esm dist",
-    "build": "npm run clean && npm run build:types && gulp"
+    "build": "npm run clean && npm run build:types && gulp",
+    "build:site": "node build/build-site"
   },
   "sideEffects": [
     "dist/*",

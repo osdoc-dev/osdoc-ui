@@ -3,7 +3,7 @@
  * @Author: ahwgs
  * @Date: 2020-06-29 23:46:26
  * @Last Modified by: ahwgs
- * @Last Modified time: 2020-06-29 23:51:18
+ * @Last Modified time: 2020-07-22 21:49:06
  */
 
 const chalk = require('chalk');
@@ -18,6 +18,7 @@ const ora = require('ora');
 const { formatTime } = require('./util');
 const formatWebpackMessage = require('./format-webpack-message');
 const open = require('./open');
+const getSitePrdConfig = require('../config/webpack.site.pro');
 const serveSpinner = ora('Starting build...').start();
 
 // 日志
@@ -83,7 +84,23 @@ function runDevServer(port, config) {
 }
 
 // 正式打包
-function buildTask() {}
+function buildTask() {
+  try {
+    return new Promise((resolve, reject) => {
+      const config = getSitePrdConfig();
+      webpack(config, (err, stats) => {
+        if (err || stats.hasErrors()) {
+          reject();
+        } else {
+          resolve();
+        }
+      });
+    });
+  } catch (err) {
+    console.warn(err);
+    process.exit(0);
+  }
+}
 
 // 开发服务
 function devServerTask() {

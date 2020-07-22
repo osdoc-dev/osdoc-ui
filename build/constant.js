@@ -2,8 +2,8 @@
  * 常量文件
  * @Author: ahwgs
  * @Date: 2020-06-29 23:46:41
- * @Last Modified by:   ahwgs
- * @Last Modified time: 2020-06-29 23:46:41
+ * @Last Modified by: ahwgs
+ * @Last Modified time: 2020-07-22 21:48:14
  */
 
 const { join, resolve } = require('path');
@@ -24,6 +24,10 @@ const WEBSITE_DESC = 'React H5 Components Lib';
 
 const PRIMARY_COLOR = '#1989fa';
 
+const PUBLIC_PATH = '/';
+
+const OUTPUT_DIR = join(ROOT, 'docsAssets');
+
 module.exports = {
   CWD,
   SCRIPT_EXTS,
@@ -34,4 +38,6 @@ module.exports = {
   WEBSITE_DESC,
   PRIMARY_COLOR,
   ROOT,
+  PUBLIC_PATH,
+  OUTPUT_DIR,
 };
