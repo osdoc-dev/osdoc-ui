@@ -47,6 +47,7 @@
     "cpr": "^3.0.1",
     "css-loader": "^3.6.0",
     "cz-conventional-changelog": "^3.2.0",
+    "cz-customizable": "^6.2.1",
     "file-loader": "^6.0.0",
     "front-matter": "^4.0.2",
     "gulp": "^4.0.2",
@@ -106,7 +107,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog"
+      "path": "node_modules/cz-customizable"
     }
   },
   "dependencies": {

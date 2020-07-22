@@ -12,7 +12,6 @@
 /coverage
 
 # production
-/build
 /dist
 /lib
 /esm
