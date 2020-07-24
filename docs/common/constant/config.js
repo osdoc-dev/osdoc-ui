@@ -24,35 +24,43 @@ export default {
         {
           label: '按钮',
           value: 'Button',
+          key: 'Button',
           module: () => import('../../../components/button/demo/index.md'),
         },
-        {
-          label: '单元格',
-          value: 'Cell',
-          module: () => import('../../../components/button/demo/index.md'),
-        },
-        {
-          label: '图片',
-          value: 'Image',
-          module: () => import('../../../components/button/demo/index.md'),
-        },
+        // {
+        //   label: '单元格',
+        //   value: 'Cell',
+        //   module: () => import('../../../components/button/demo/index.md'),
+        // },
+        // {
+        //   label: '图片',
+        //   value: 'Image',
+        //   module: () => import('../../../components/button/demo/index.md'),
+        // },
       ],
     },
     {
       label: '表单组件',
       value: 'Comp',
       children: [
-        {
-          label: '表单',
-          value: 'Form',
-          module: () => import('../../../components/button/demo/index.md'),
-        },
+        // {
+        //   label: '表单',
+        //   value: 'Form',
+        //   module: () => import('../../../components/button/demo/index.md'),
+        // },
       ],
     },
     {
       label: '操作反馈',
       value: 'Comp',
-      children: [],
+      children: [
+        {
+          label: '触摸',
+          key: 'TouchableOpacity',
+          value: 'TouchableOpacity',
+          module: () => import('../../../components/touchable-opacity/demo/index.md'),
+        },
+      ],
     },
     {
       label: '业务组件',

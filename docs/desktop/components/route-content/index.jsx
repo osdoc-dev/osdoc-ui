@@ -1,10 +1,14 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import Markdown from '../markdown';
 
 const LoadableComponent = component =>
   Loadable({
     loader: component.module,
+    render: (loaded, props) => (
+      <Markdown document={loaded.default} component={component} {...props} />
+    ),
     loading: () => null,
   });
 

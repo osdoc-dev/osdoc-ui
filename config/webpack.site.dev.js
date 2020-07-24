@@ -18,12 +18,12 @@ const { WEBSITE_TITLE, WEBSITE_LOGO, WEBSITE_DESC } = require('../build/constant
 function getSiteDevConfig() {
   return merge(getBaseConfig(), {
     entry: {
-      'site-desktop': join(__dirname, '../docs/desktop/main.js'),
-      'site-mobile': join(__dirname, '../docs/mobile/main.js'),
+      'site-desktop': join(__dirname, '../docs/desktop/main.jsx'),
+      'site-mobile': join(__dirname, '../docs/mobile/main.jsx'),
     },
     resolve: {
       alias: {
-        'osdoc-ui': resolve(__dirname, '../components'),
+        osdocui: join(__dirname, '../components'),
       },
     },
     devServer: {

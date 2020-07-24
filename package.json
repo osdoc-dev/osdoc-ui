@@ -7,7 +7,6 @@
   "module": "esm/index.js",
   "repository": "git@github.com:osdoc-dev/osdoc-ui.git",
   "author": "ahwgs <ah_wgs@126.com>",
-  "homepage": "https://ui.osdoc.cn/#/",
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev",
@@ -31,6 +30,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@babel/standalone": "^7.10.5",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@svgr/webpack": "^5.4.0",
@@ -67,12 +67,14 @@
     "lodash": "^4.17.15",
     "markdown-it": "^11.0.0",
     "markdown-it-container": "^3.0.0",
+    "marked": "^1.1.1",
     "ora": "^4.0.4",
     "osdoc-lint": "1.0.6",
     "portfinder": "^1.0.26",
     "postcss": "^7.0.32",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
+    "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loadable": "^5.5.0",
@@ -113,6 +115,8 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.10.3"
+    "@babel/runtime": "^7.10.3",
+    "create-react-context": "^0.3.0",
+    "rmc-feedback": "^2.0.0"
   }
 }

@@ -7,7 +7,7 @@ type Loading = number | boolean;
 const prefixCls = 'osdoc-button';
 
 const Button: React.FC<ButtonProps> = (props, ref) => {
-  const { type, size, className, loading, ...rest } = props;
+  const { type, size, className, loading, children, ...rest } = props;
 
   const [innerLoading, setLoading] = React.useState<Loading>(!!loading);
   const buttonRef = (ref as any) || React.createRef<HTMLElement>();
@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = (props, ref) => {
 
   const buttonNode = (
     <button type={htmlType} className={classes} onClick={handleClick} ref={buttonRef}>
-      123
+      {children}
     </button>
   );
   return buttonNode;

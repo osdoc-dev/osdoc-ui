@@ -3,25 +3,36 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Loadable from 'react-loadable';
 import config from '../common/constant/config';
+import Container from './components/Container';
+import Markdown from './components/Markdown';
+import Footer from './components/Footer';
+import './assets/style/index.less';
 
-const LoadableComponent = (component) =>
-  Loadable({
-    loader: component.module,
+const LoadableComponent = component => {
+  const loader = { page: component.module };
+  return Loadable.Map({
+    loader,
+    render: (loaded, props) => (
+      <Container className={`${component.value.toLowerCase()}-page`}>
+        <Markdown content={loaded.page.default} component={component} {...props} />
+        <Footer />
+      </Container>
+    ),
     loading: () => null,
   });
+};
 
-class App extends React.Component {
+class App extends React.PureComponent {
   render() {
     const { comp } = config;
 
-    const [basic] = comp;
-    console.log('basic', basic);
+    const [basic, form, feedback] = comp;
 
     return (
       <Suspense fallback={null}>
         <Switch>
           <Route exact path="/" component={lazy(() => import('./pages/Index'))} />
-          {[...basic.children].map((component, i) => (
+          {[...basic.children, ...form.children, ...feedback.children].map((component, i) => (
             <Route
               key={+i}
               path={`/${component.value.toLowerCase()}`}

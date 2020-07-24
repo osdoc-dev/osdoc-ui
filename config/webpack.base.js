@@ -8,7 +8,6 @@
 
 const { CACHE_DIR, SCRIPT_EXTS, STYLE_EXTS, PRIMARY_COLOR } = require('../build/constant');
 const autoprefixer = require('autoprefixer');
-const path = require('path');
 const WebpackBar = require('webpackbar');
 const CACHE_LOADER = {
   loader: 'cache-loader',
@@ -64,10 +63,6 @@ function getBaseConfig() {
           use: [...CSS_LOADERS, 'less-loader'],
         },
         {
-          test: /\.md$/,
-          loader: `babel-loader!${path.join(__dirname, '../build/addImportLoader.js')}`,
-        },
-        {
           test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
           loader: 'file-loader',
           options: {
@@ -82,6 +77,10 @@ function getBaseConfig() {
             limit: 3000,
             name: 'img/[name].[ext]',
           },
+        },
+        {
+          test: /\.md$/,
+          use: require.resolve('raw-loader'),
         },
       ],
     },

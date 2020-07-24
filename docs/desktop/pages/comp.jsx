@@ -13,7 +13,7 @@ class CompPage extends React.PureComponent {
     return (
       <section className="page comp-page">
         <SiderMenu pathName={pathName} config={navConfig} title="组件" />
-        <div className="sider-right">
+        <div className="sider-right is-simulator">
           <RouteContent data={navConfig} pathName={pathName} redirect="button" />
         </div>
         <Simulator path={mobilePath} />

@@ -1014,6 +1014,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/standalone@^7.10.5":
+  version "7.10.5"
+  resolved "https://registry.npmjs.org/@babel/standalone/-/standalone-7.10.5.tgz#4ee38dc79fda10a2a0da0897f09e270310151314"
+  integrity sha512-PERGHqhQ7H3TrdglvSW4pEHULywMJEdytnzaR0VPF1HN45aS+3FcE62efb90XPKS9TlgrEUkYDvYMt+0m6G0YA==
+
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -2184,6 +2189,14 @@ babel-plugin-dynamic-import-node@^2.3.3:
   dependencies:
     object.assign "^4.1.0"
 
+babel-runtime@6.x:
+  version "6.26.0"
+  resolved "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
+  integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.11.0"
+
 babylon@7.0.0-beta.44:
   version "7.0.0-beta.44"
   resolved "https://registry.npmjs.org/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
@@ -2736,7 +2749,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.6:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
@@ -3154,6 +3167,11 @@ core-js-pure@^3.0.0:
   version "3.6.5"
   resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.6.5.tgz#c79e75f5e38dbc85a662d91eea52b8256d53b813"
 
+core-js@^2.4.0:
+  version "2.6.11"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
+  integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
+
 core-js@^3.6.1, core-js@^3.6.5:
   version "3.6.5"
   resolved "https://registry.npmjs.org/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
@@ -3217,6 +3235,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+create-react-context@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/create-react-context/-/create-react-context-0.3.0.tgz#546dede9dc422def0d3fc2fe03afe0bc0f4f7d8c"
+  integrity sha512-dNldIoSuNSvlTJ7slIKC/ZFGKexBMBrrcc+TTe1NdmROnaASuLPvqpwj9v4XS4uXZ8+YPu0sNmShX2rXI5LNsw==
+  dependencies:
+    gud "^1.0.0"
+    warning "^4.0.3"
 
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -4942,6 +4968,11 @@ graceful-fs@^4.0.0, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2
   version "4.2.4"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
 
+gud@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
+  integrity sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw==
+
 gulp-autoprefixer@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/gulp-autoprefixer/-/gulp-autoprefixer-7.0.1.tgz#3c0dc26afc802d317e7560a7f760a0399049075a"
@@ -6444,6 +6475,11 @@ markdown-it@^11.0.0:
 markdown-table@^1.1.0:
   version "1.1.3"
   resolved "https://registry.npmjs.org/markdown-table/-/markdown-table-1.1.3.tgz#9fcb69bcfdb8717bfd0398c6ec2d93036ef8de60"
+
+marked@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/marked/-/marked-1.1.1.tgz#e5d61b69842210d5df57b05856e0c91572703e6a"
+  integrity sha512-mJzT8D2yPxoPh7h0UXkB+dBj4FykPJ2OIfxAWeIHrvoHDkFxukV/29QxoFQoPM6RLEwhIFdJpmKBlqVM3s2ZIw==
 
 matchdep@^2.0.0:
   version "2.0.0"
@@ -8048,6 +8084,14 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+raw-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npmjs.org/raw-loader/-/raw-loader-4.0.1.tgz#14e1f726a359b68437e183d5a5b7d33a3eba6933"
+  integrity sha512-baolhQBSi3iNh1cglJjA0mYzga+wePk7vdEX//1dTFd+v4TsQlQE0jitJSNF1OIP82rdYulH7otaVmdlDaJ64A==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^2.6.5"
+
 react-dom@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
@@ -8245,6 +8289,11 @@ regenerate@^1.4.0:
 regenerator-runtime@0.13.3:
   version "0.13.3"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
+
+regenerator-runtime@^0.11.0:
+  version "0.11.1"
+  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+  integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
 regenerator-runtime@^0.13.4:
   version "0.13.5"
@@ -8570,6 +8619,14 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rmc-feedback@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/rmc-feedback/-/rmc-feedback-2.0.0.tgz#cbc6cb3ae63c7a635eef0e25e4fbaf5ac366eeaa"
+  integrity sha512-5PWOGOW7VXks/l3JzlOU9NIxRpuaSS8d9zA3UULUCuTKnpwBHNvv1jSJzxgbbCQeYzROWUpgKI4za3X4C/mKmQ==
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.5"
 
 run-async@^2.2.0:
   version "2.4.1"
@@ -10160,6 +10217,13 @@ vinyl@^2.0.0:
 vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
+
+warning@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npmjs.org/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
+  dependencies:
+    loose-envify "^1.0.0"
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"

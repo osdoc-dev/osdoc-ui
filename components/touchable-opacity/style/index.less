@@ -1,0 +1,13 @@
+@import '../../style/index';
+
+@touchabled-prefix-cls: osdoc-touchable-opacity;
+
+.@{touchabled-prefix-cls} {
+  &-default {
+    opacity: 0.3;
+  }
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 1;
+  }
+}

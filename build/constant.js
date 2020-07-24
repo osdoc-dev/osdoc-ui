@@ -16,9 +16,9 @@ const ROOT = resolve(__dirname, '..');
 
 const CACHE_DIR = join(ROOT, 'node_modules/.cache');
 
-const WEBSITE_TITLE = 'OSDOC-UI | OSDOC-DEV';
+const WEBSITE_TITLE = 'OSDOC-UI | OSDOC-UI';
 
-const WEBSITE_LOGO = 'https://www.ahwgs.cn/wp-content/uploads/2017/09/favicon.ico';
+const WEBSITE_LOGO = '';
 
 const WEBSITE_DESC = 'React H5 Components Lib';
 
