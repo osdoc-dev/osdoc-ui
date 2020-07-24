@@ -3,7 +3,7 @@
 ## 基本用法
 
 ```jsx
-import { TouchableOpacity } from 'osdocui';
+import { TouchableOpacity } from 'osdoc-ui';
 const Demo = () => {
   const onTap = () => {
     alert('按钮点击');

@@ -30,7 +30,7 @@ export default ({ children, lang }) => {
             : require('osdocui/locale-provider/locale/zh_CN');
         value = value
           .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'react';/, 'const { $1 } = React;')
-          .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'osdocui';/, 'const { $1 } = osdocui;')
+          .replace(/import\s+\{\s+(.*)\s+\}\s+from\s+'osdoc-ui';/, 'const { $1 } = osdocui;')
           .replace(
             /ReactDOM.render\(\s?([^]+?)(,\s?mountNode\s?\))/g,
             `
