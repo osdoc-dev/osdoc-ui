@@ -1,11 +1,17 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable no-param-reassign */
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable global-require */
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { transform } from '@babel/standalone';
+import '../../../../components/style/entry';
 
 export default ({ children, lang }) => {
   const containerId = `${parseInt(Math.random() * 1e9, 10).toString(36)}`;
   const document = children.match(/([^]*)\n?(```[^]+```)/);
   const containerElem = useRef();
+  const title = String(document[1]);
   const source = document[2].match(/```(.*)\n?([^]+)```/);
   const renderSource = value => {
     import('../../../../components')
@@ -61,6 +67,10 @@ export default ({ children, lang }) => {
       if (container) ReactDOM.unmountComponentAtNode(container);
     };
   });
-
-  return <div id={containerId} ref={containerElem} />;
+  return (
+    <section>
+      <h2>{title}</h2>
+      <div id={containerId} ref={containerElem} />
+    </section>
+  );
 };

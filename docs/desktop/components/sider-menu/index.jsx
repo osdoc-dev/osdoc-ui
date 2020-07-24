@@ -9,7 +9,7 @@ export default class SiderMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuList: [0],
+      menuList: [0, 1, 2, 3],
     };
   }
 

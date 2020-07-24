@@ -5,10 +5,13 @@
 ```jsx
 import { TouchableOpacity } from 'osdocui';
 const Demo = () => {
+  const onTap = () => {
+    alert('按钮点击');
+  };
   return (
     <div>
-      <TouchableOpacity>
-        <div>触摸</div>
+      <TouchableOpacity onClick={onTap}>
+        <div>请点击我</div>
       </TouchableOpacity>
     </div>
   );
